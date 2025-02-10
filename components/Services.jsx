@@ -77,22 +77,26 @@ const About = () => {
         {/* Start Sections */}
         <div id="services1" className="sections relative w-screen h-screen flex flex-row justify-center items-center">
           <div className="absolute">
-            Section 1 Content
+            <span className="font-bold text-2xl text-white">Section 1 Content</span>
           </div>
 
-          <img src="/test.jpg" alt="test" className="object-contain" />
+          <img src="/test.jpg" alt="test" className="object-cover h-full w-full" />
         </div>
 
-        <div id="services2" className="sections w-screen h-screen flex flex-row justify-center items-center">
-          <div>
-            Section 2 Content
+        <div id="services2" className="sections relative w-screen h-screen flex flex-row justify-center items-center bg-red">
+          <div className="absolute">
+            <span className="font-bold text-2xl text-white">Section 2 Content</span>
           </div>
+
+          {/* <img src="/test.jpg" alt="test" className="object-cover h-full" /> */}
         </div>
 
-        <div id="services3" className="sections w-screen h-screen flex flex-row justify-center items-center">
-          <div>
-            Section 3 Content
+        <div id="services3" className="sections relative w-screen h-screen flex flex-row justify-center items-center bg-black">
+          <div className="absolute">
+            <span className="font-bold text-2xl text-white">Section 3 Content</span>
           </div>
+
+          {/* <img src="/test.jpg" alt="test" className="object-cover h-full" /> */}
         </div>
       </div>
     </section>

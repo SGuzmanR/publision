@@ -3,13 +3,6 @@ import { useEffect, useState } from "react";
 
 const LogoAnimation = () => {
   useEffect(() => {
-    let tl = gsap.timeline({ paused: true });
-
-    tl.to('.test', {
-
-    })
-
-    tl.play();
   }, []);
 
   return (

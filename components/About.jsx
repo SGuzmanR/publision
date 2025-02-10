@@ -26,7 +26,7 @@ const About = () => {
           start: 'top top',
           end: 'bottom top',
           scrub: true,
-          markers: true,
+          // markers: true,
         },
         opacity: 0.2,
         stagger: 0.1,
@@ -40,7 +40,7 @@ const About = () => {
         end: 'bottom top',
         scrub: true,
         pin: true,
-        markers: false,
+        // markers: true,
       }
     });
 

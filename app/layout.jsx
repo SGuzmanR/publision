@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body className={`${caveat.variable} ${mulish.variable} antialiased`}>
         <Navbar />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

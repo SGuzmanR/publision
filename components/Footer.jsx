@@ -5,7 +5,7 @@ import { FooterSocialLinks } from '@/constants';
 
 const Footer = () => {
   return (
-    <footer id='contact' className='h-screen bg-red'>
+    <footer id='contact' className='h-screen w-full bg-red'>
       <div className='flex flex-col justify-between items-center w-full h-full pb-6'>
         {/* Footer Contact */}
         <div className='w-full flex flex-col pt-11'>

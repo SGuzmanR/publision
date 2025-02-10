@@ -7,17 +7,15 @@ const Marquee = () => {
   useEffect(() => {
     const marquee = marqueeRef.current;
     
-    // Duplicate the marquee-inner content for seamless looping
     const contentWidth = marquee.scrollWidth;
     const duplicateContent = marquee.innerHTML;
-    marquee.innerHTML += duplicateContent; // Append a duplicate of the content
+    marquee.innerHTML += duplicateContent;
 
-    // GSAP animation for smooth, infinite scrolling
     gsap.to(marquee, {
-      x: -contentWidth, // Move the content to the left
-      duration: 25, // Duration for one complete scroll (adjust as needed)
-      repeat: -1, // Repeat the animation infinitely
-      ease: 'linear', // Smooth, constant speed
+      x: -contentWidth,
+      duration: 25,
+      repeat: -1,
+      ease: 'linear',
     });
   }, []);
 
