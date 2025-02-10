@@ -24,7 +24,8 @@ body {
 
 @layer utilities {
   .paddingX {
-    @apply px-24;
+    /* @apply px-24; */
+    @apply px-36 lg:px-40 md:px-24 sm:px-8 max-sm:px-6;
   }
 }
 

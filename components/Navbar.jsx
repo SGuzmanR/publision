@@ -2,11 +2,51 @@
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import { Navlinks, SocialLinks } from "@/constants";
+import { ScrollTrigger } from "gsap/all";
 
 const Navbar = () => {
   const navLinksRef = useRef([]);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+    {open 
+      ?  gsap.to(".mobile-nav", {
+        translateY: 0,
+        ease: "power2.inOut",
+        duration: 1,
+        delay: .2,
+      })
+      : gsap.to(".mobile-nav", {
+        translateY: "100%",
+        ease: "power2.inOut",
+        duration: 1,
+        delay: .2,
+      })
+    }
+  };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const showAnim = gsap.from('#navbar', { 
+      yPercent: -130,
+      paused: true,
+      duration: 0.2
+    }).progress(1);
+    
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      markers: true,
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse()
+      }
+    });
+  }, []);
 
   useEffect(() => {
     let tl = gsap.timeline();
@@ -21,37 +61,21 @@ const Navbar = () => {
     });
   }, []);
 
-  const handleMouseEnter = (index) => {
-    gsap.to(navLinksRef.current[index].querySelector('.underline'), {
-      width: '100%',
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-  };
-
-  const handleMouseLeave = (index) => {
-    gsap.to(navLinksRef.current[index].querySelector('.underline'), {
-      width: '0%',
-      duration: 0.3,
-      ease: 'power2.in',
-    });
-  };
-
   return (
-    <header className="absolute top-0 left-0 w-full">
-      <nav className="paddingX w-full flex flex-row justify-between items-center py-8 font-mulish">
-        <div className="flex gap-7">
+    <header className="fixed top-0 left-0 w-full mt-3 paddingX z-40">
+      <nav id="navbar" className="bg-white w-full flex flex-row justify-between items-center py-4 font-mulish px-4 rounded-lg">
+        <div className="flex gap-2 max-[940px]:hidden">
           {Navlinks.map((link, index) => (
             <Link
               key={link.name}
               href={link.href}
-              className="relative text-[14px] navlinks -translate-y-10 opacity-0 will-change-auto"
-              ref={(el) => (navLinksRef.current[index] = el)}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
+              className="relative text-[14px] navlinks -translate-y-10 opacity-0 will-change-auto w-auto"
             >
-              <span>{link.name}</span>
-              <span className="underline block absolute bottom-0 left-0 w-0 h-[2px] bg-red"></span>
+              <span className={`
+                ${link.isSpecial 
+                  ? 'bg-red rounded-lg px-4 py-2 text-white' 
+                  : 'bg-white rounded-lg px-4 py-2 text-black border-white hover:border-red hover:text-red border-2 transition-colors duration-500'
+                }`}>{link.name}</span>
             </Link>
           ))}
         </div>
@@ -63,7 +87,16 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
+        <div className="max-[940px]:flex hidden">
+          <span onClick={handleOpen}>HM</span>
+        </div>
       </nav>
+
+      {/* Mobile Nav */}
+      <div className="mobile-nav fixed h-screen w-screen top-0 left-0 bg-red z-50 translate-y-[100%]">
+        <span onClick={handleOpen}>HM CLOSE</span>
+      </div>
     </header>
   );
 };

@@ -14,10 +14,6 @@ const useLenis = () => {
     }
     
     requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
   }, []);
 };
 

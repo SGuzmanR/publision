@@ -1,23 +1,19 @@
 import LogoAnimation from "./LogoAnimation";
+import Marquee from "./Marquee";
 
 const Hero = () => {
   return (
     <section className="h-screen">
-      <div className="w-full h-full flex flex-col justify-end items-start paddingX pb-12 gap-6">
-        <div className="w-full flex flex-row justify-between items-end">
+      <div className="w-full h-full flex flex-col justify-end max-sm:justify-center items-start pb-12 gap-6">
+        <div className="relative w-full flex flex-col justify-between items-end paddingX h-auto">
           <LogoAnimation /> 
-
-          <p className="font-caveat text-red text-4xl text-nowrap">Damos imagen a tus ideas</p>
+          <p className="absolute md:bottom-[65%] max-md:bottom-[-20%] sm:bottom-[58%] max-sm:bottom-[-30%] max-sm:text-[35px] max-[380px]:bottom-[-35%] max-[380px]:text-[25px] font-caveat text-red text-4xl">Damos imagen a tus ideas</p>
         </div>
 
-        <div className="flex flex-row overflow-hidden gap-16 -translate-x-28">
-          <span className="text-7xl font-bold text-nowrap">PUBLICIDAD SIN LIMITES</span>
-          <span className="text-7xl font-bold text-nowrap">PUBLICIDAD SIN LIMITES</span>
-          <span className="text-7xl font-bold text-nowrap">PUBLICIDAD SIN LIMITES</span>
-        </div>
+        <Marquee />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
