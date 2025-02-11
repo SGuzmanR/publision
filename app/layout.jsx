@@ -18,7 +18,7 @@ const mulish = Mulish({
 
 export const metadata = {
   title: "Publision",
-  description: "",
+  description: "", // Falta descripcion y Metadata SEO
 };
 
 export default function RootLayout({ children }) {
@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
       <body className={`${caveat.variable} ${mulish.variable} antialiased`}>
         <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
-}
+};

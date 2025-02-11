@@ -1,8 +1,45 @@
 import gsap from "gsap";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const LogoAnimation = () => {
   useEffect(() => {
+    const paths = document.querySelectorAll('svg path');
+    
+    gsap.fromTo(paths, {
+      strokeDasharray: (i) => {
+        const length = paths[i].getTotalLength();
+        return length;
+      },
+      strokeDashoffset: (i) => {
+        const length = paths[i].getTotalLength();
+        return length;
+      },
+      opacity: 0,
+      transformOrigin: 'center',
+    }, {
+      strokeDashoffset: 0,
+      opacity: 1,
+      duration: 2,
+      ease: "power4.out",
+      stagger: 0.1,
+    });
+
+    // gsap.to(paths, {
+    //   fill: (i) => (i % 2 === 0 ? '#E41F2E' : 'black'),
+    //   duration: 1.5,
+    //   delay: 2, // Delay the color change after the drawing animation
+    //   stagger: 0.1,
+    // });
+
+    // gsap.fromTo('svg', {
+    //   scale: 0.5,
+    //   opacity: 0,
+    // }, {
+    //   scale: 1,
+    //   opacity: 1,
+    //   duration: 1.5,
+    //   ease: "back.out(1.7)",
+    // });
   }, []);
 
   return (
@@ -12,6 +49,7 @@ const LogoAnimation = () => {
         height="100%" 
         viewBox="0 0 792 324" 
         fill="none"
+        strokeWidth="2"
       >
         {/* N */}
         <path 
@@ -62,7 +100,7 @@ const LogoAnimation = () => {
         />
       </svg>
     </div>
-  )
-}
+  );
+};
 
-export default LogoAnimation
+export default LogoAnimation;

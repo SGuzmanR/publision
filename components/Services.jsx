@@ -3,7 +3,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
-import Image from "next/image";
 
 const About = () => {
   useEffect(() => {
@@ -19,21 +18,8 @@ const About = () => {
         toggleActions: "play reverse play reverse",
       }
     })
-
-    tl.fromTo('.about_img', {
-      opacity: 0,
-      translateX: -120,
-      translateY: 100
-    }, {
-      x: 0,
-      y: 0,
-      opacity: 1,
-      duration: 1.5,
-      delay: 1.5,
-      ease: "power4.inOut"
-    })
     
-    tl.to('.about_text', {
+    tl.to('.services_text', {
       opacity: 1,
       duration: .5,
       stagger: 0.6,
@@ -53,23 +39,27 @@ const About = () => {
         snap: 1 / (sections.length),
       },
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
     <section id="services" className="flex">
       <div className="flex flex-row">
         <div className="w-screen h-screen flex justify-center items-center flex-col paddingX">
-          <div className="about relative">
-            <h2 className="about_text opacity-0 text-start uppercase w-full text-red text-nowrap justify-center text-[9vw] font-extrabold leading-none">
-              <span className="about_text opacity-0 translate-y-40">S</span>
-              <span className="about_text opacity-0 translate-y-40">e</span>
-              <span className="about_text opacity-0 translate-y-40">r</span>
-              <span className="about_text opacity-0 translate-y-40">v</span>
-              <span className="about_text opacity-0 translate-y-40">i</span>
-              <span className="about_text opacity-0 translate-y-40">c</span>
-              <span className="about_text opacity-0 translate-y-40">i</span>
-              <span className="about_text opacity-0 translate-y-40">o</span>
-              <span className="about_text opacity-0 translate-y-40">s</span>
+          <div className="relative">
+            <h2 className="services_text opacity-0 text-start uppercase w-full text-red text-nowrap justify-center text-[9vw] font-extrabold leading-none">
+              <span className="services_text opacity-0 translate-y-40">S</span>
+              <span className="services_text opacity-0 translate-y-40">e</span>
+              <span className="services_text opacity-0 translate-y-40">r</span>
+              <span className="services_text opacity-0 translate-y-40">v</span>
+              <span className="services_text opacity-0 translate-y-40">i</span>
+              <span className="services_text opacity-0 translate-y-40">c</span>
+              <span className="services_text opacity-0 translate-y-40">i</span>
+              <span className="services_text opacity-0 translate-y-40">o</span>
+              <span className="services_text opacity-0 translate-y-40">s</span>
             </h2>
           </div>
         </div>
