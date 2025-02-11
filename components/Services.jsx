@@ -36,7 +36,7 @@ const About = () => {
         pin: true,
         toggleActions: "play none none reversed",
         scrub: 1,
-        snap: 1 / (sections.length),
+        // snap: 1 / (sections.length),
       },
     });
 
@@ -46,7 +46,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="services" className="flex">
+    <section id="services" className="flex flex-row">
       <div className="flex flex-row">
         <div className="w-screen h-screen flex justify-center items-center flex-col paddingX">
           <div className="relative">
@@ -87,6 +87,22 @@ const About = () => {
           </div>
 
           {/* <img src="/test.jpg" alt="test" className="object-cover h-full" /> */}
+        </div>
+      </div>
+
+      <div className="w-screen h-screen flex justify-center items-center flex-col paddingX">
+        <div className="relative">
+          <h2 className="services_text opacity-0 text-start uppercase w-full text-red text-nowrap justify-center text-[9vw] font-extrabold leading-none">
+            <span className="services_text opacity-0 translate-y-40">S</span>
+            <span className="services_text opacity-0 translate-y-40">e</span>
+            <span className="services_text opacity-0 translate-y-40">r</span>
+            <span className="services_text opacity-0 translate-y-40">v</span>
+            <span className="services_text opacity-0 translate-y-40">i</span>
+            <span className="services_text opacity-0 translate-y-40">c</span>
+            <span className="services_text opacity-0 translate-y-40">i</span>
+            <span className="services_text opacity-0 translate-y-40">o</span>
+            <span className="services_text opacity-0 translate-y-40">s</span>
+          </h2>
         </div>
       </div>
     </section>

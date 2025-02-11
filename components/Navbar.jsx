@@ -124,7 +124,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex flex-col gap-6 items-center justify-center">
+          <div className="flex flex-col gap-6 items-center justify-center pb-20">
             <div className="flex gap-6">
               {FooterSocialLinks.map((link) => (
                 <Link key={link.name} href={link.href} target="_blank" onClick={handleOpen} className="navLinks_mobile opacity-0">

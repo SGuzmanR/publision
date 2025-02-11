@@ -4,6 +4,7 @@ import useLenis from "@/hooks/useLenis";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Other from "@/components/Other";
 
 export default function Home() {
   useLenis();
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <Other />
     </main>
   );
 };
