@@ -28,13 +28,13 @@ const Marquee = () => {
         <span className="marquee-part font-bold text-nowrap">
           PUBLICIDAD SIN LIMITES
         </span>
-        <span className="marquee-part font-bold text-nowrap opacity-20">
+        <span className="marquee-part font-bold text-nowrap opacity-30">
           PUBLICIDAD SIN LIMITES
         </span>
         <span className="marquee-part font-bold text-nowrap">
           PUBLICIDAD SIN LIMITES
         </span>
-        <span className="marquee-part font-bold text-nowrap opacity-20">
+        <span className="marquee-part font-bold text-nowrap opacity-30">
           PUBLICIDAD SIN LIMITES
         </span>
       </div>

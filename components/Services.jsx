@@ -30,14 +30,15 @@ const About = () => {
 
     gsap.to(sections, {
       xPercent: -100 * (sections.length),
-      ease: 'none',
+      ease: 'sine.inOut',
       scrollTrigger: {
         trigger: '#services',
         pin: true,
         toggleActions: "play none none reversed",
         scrub: 1,
-        // snap: 1 / (sections.length),
+        snap: 1 / (sections.length),
       },
+      duration: 1
     });
 
     return () => {
@@ -67,26 +68,49 @@ const About = () => {
         {/* Start Sections */}
         <div id="services1" className="sections relative w-screen h-screen flex flex-row justify-center items-center">
           <div className="absolute">
-            <span className="font-bold text-2xl text-white">Section 1 Content</span>
+            <h3 className="text-[5vw] font-bold text-white uppercase">Avisos y Vallas</h3>
+
+            <p>Pequeña descripcion de la categoria</p>
+
+            <span>Pendones Adhesivos Microperforados Luminosos Acrílicos Sanblasting Adhesivo Corte Señalizacion Banderas Cudros decorativos</span>
           </div>
 
           <img src="/test.jpg" alt="test" className="object-cover h-full w-full" />
         </div>
 
-        <div id="services2" className="sections relative w-screen h-screen flex flex-row justify-center items-center bg-red">
+        <div id="services2" className="sections relative w-screen h-screen flex flex-row justify-center items-center">
           <div className="absolute">
-            <span className="font-bold text-2xl text-white">Section 2 Content</span>
+            <h3 className="text-[5vw] font-bold text-white uppercase">Impresos</h3>
+
+            <p>Pequeña descripcion de la categoria</p>
+
+            <ul>
+              <li>Tarjetas de Presentacion</li>
+              <li>Talonarios de Facturas, Remisiones, Orden de trabajo</li>
+              <li>Volantes</li>
+              <li>Carpetas Plegables Menu</li>
+            </ul>
           </div>
 
-          {/* <img src="/test.jpg" alt="test" className="object-cover h-full" /> */}
+          <img src="/test.jpg" alt="test" className="object-cover w-full h-full" />
         </div>
 
-        <div id="services3" className="sections relative w-screen h-screen flex flex-row justify-center items-center bg-black">
+        <div id="services3" className="sections relative w-screen h-screen flex flex-row justify-center items-center">
           <div className="absolute">
-            <span className="font-bold text-2xl text-white">Section 3 Content</span>
+            <h3 className="text-[5vw] font-bold text-white uppercase">Promocionales</h3>
+
+            <p>Pequeña descripcion de la categoria</p>
+
+            <ul>
+              <li>Esferos</li>
+              <li>Esferos</li>
+              <li>Esferos</li>
+              <li>Esferos</li>
+              <li>Esferos</li>
+            </ul>
           </div>
 
-          {/* <img src="/test.jpg" alt="test" className="object-cover h-full" /> */}
+          <img src="/test.jpg" alt="test" className="object-cover w-full h-full" />
         </div>
       </div>
 
